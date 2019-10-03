@@ -14,7 +14,7 @@ stub = meterValue_pb2_grpc.meterUsageValuesStub(channel)
 request = meterValue_pb2.Date(date_str='2019-01-02')
 
 # make the call
-response = stub.get_data(request)
+response = stub.getMeterData(request)
 
 # et voilà
 print(response.value)

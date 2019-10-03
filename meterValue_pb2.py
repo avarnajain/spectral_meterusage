@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10meterValue.proto\"\x18\n\x04\x44\x61te\x12\x10\n\x08\x64\x61te_str\x18\x01 \x01(\t\"b\n\tdateValue\x12&\n\x06values\x18\x01 \x03(\x0b\x32\x16.dateValue.ValuesEntry\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\x33\n\x10meterUsageValues\x12\x1f\n\x08get_data\x12\x05.Date\x1a\n.dateValue\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x10meterValue.proto\"\x18\n\x04\x44\x61te\x12\x10\n\x08\x64\x61te_str\x18\x01 \x01(\t\"b\n\tdateValue\x12&\n\x06values\x18\x01 \x03(\x0b\x32\x16.dateValue.ValuesEntry\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x32\x37\n\x10meterUsageValues\x12#\n\x0cgetMeterData\x12\x05.Date\x1a\n.dateValue\"\x00\x62\x06proto3')
 )
 
 
@@ -162,11 +162,11 @@ _METERUSAGEVALUES = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=146,
-  serialized_end=197,
+  serialized_end=201,
   methods=[
   _descriptor.MethodDescriptor(
-    name='get_data',
-    full_name='meterUsageValues.get_data',
+    name='getMeterData',
+    full_name='meterUsageValues.getMeterData',
     index=0,
     containing_service=None,
     input_type=_DATE,

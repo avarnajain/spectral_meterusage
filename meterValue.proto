@@ -1,13 +1,17 @@
 syntax = "proto3";
 
+
+// Request for meter usage values
 message Date {
     string date_str = 1;
 }
 
+// Response for meter usage values
 message dateValue {
     map<string, float> values = 1;
 }
 
+// Service Definition
 service meterUsageValues {
-    rpc get_data (Date) returns (dateValue) {}
+    rpc getMeterData (Date) returns (dateValue) {}
 }

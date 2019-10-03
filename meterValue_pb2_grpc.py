@@ -5,8 +5,8 @@ import meterValue_pb2 as meterValue__pb2
 
 
 class meterUsageValuesStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Service Definition
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -14,18 +14,18 @@ class meterUsageValuesStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.get_data = channel.unary_unary(
-        '/meterUsageValues/get_data',
+    self.getMeterData = channel.unary_unary(
+        '/meterUsageValues/getMeterData',
         request_serializer=meterValue__pb2.Date.SerializeToString,
         response_deserializer=meterValue__pb2.dateValue.FromString,
         )
 
 
 class meterUsageValuesServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """Service Definition
+  """
 
-  def get_data(self, request, context):
+  def getMeterData(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,8 +35,8 @@ class meterUsageValuesServicer(object):
 
 def add_meterUsageValuesServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'get_data': grpc.unary_unary_rpc_method_handler(
-          servicer.get_data,
+      'getMeterData': grpc.unary_unary_rpc_method_handler(
+          servicer.getMeterData,
           request_deserializer=meterValue__pb2.Date.FromString,
           response_serializer=meterValue__pb2.dateValue.SerializeToString,
       ),
