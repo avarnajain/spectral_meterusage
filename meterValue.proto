@@ -3,8 +3,9 @@ syntax = "proto3";
 package spectral_meterusage;
 
 // Request for meter usage values
-message Date {
-    string date_str = 1;
+message Dates {
+    string date_start = 1;
+    string date_end = 2;
 }
 
 // Response for meter usage values
@@ -14,5 +15,5 @@ message dateValue {
 
 // Service Definition
 service meterUsageValues {
-    rpc getMeterData (Date) returns (dateValue) {}
+    rpc getMeterData (Dates) returns (dateValue) {}
 }

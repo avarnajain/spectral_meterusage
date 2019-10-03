@@ -22,7 +22,7 @@ class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
         response = meterValue_pb2.dateValue()
         # response.date_str = functions.get_data(request.date_str)
         # print('request date string', request.date_str)
-        response.values = functions.get_data(request.date_str)
+        response.values = functions.get_data(request.date_start, request.date_end)
         # print('response', response)
         # print(response.values)
         return response

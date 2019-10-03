@@ -20,22 +20,29 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='spectral_meterusage',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10meterValue.proto\x12\x13spectral_meterusage\"\x18\n\x04\x44\x61te\x12\x10\n\x08\x64\x61te_str\x18\x01 \x01(\t\"\x1b\n\tdateValue\x12\x0e\n\x06values\x18\x01 \x01(\t2_\n\x10meterUsageValues\x12K\n\x0cgetMeterData\x12\x19.spectral_meterusage.Date\x1a\x1e.spectral_meterusage.dateValue\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x10meterValue.proto\x12\x13spectral_meterusage\"-\n\x05\x44\x61tes\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61te_end\x18\x02 \x01(\t\"\x1b\n\tdateValue\x12\x0e\n\x06values\x18\x01 \x01(\t2`\n\x10meterUsageValues\x12L\n\x0cgetMeterData\x12\x1a.spectral_meterusage.Dates\x1a\x1e.spectral_meterusage.dateValue\"\x00\x62\x06proto3')
 )
 
 
 
 
-_DATE = _descriptor.Descriptor(
-  name='Date',
-  full_name='spectral_meterusage.Date',
+_DATES = _descriptor.Descriptor(
+  name='Dates',
+  full_name='spectral_meterusage.Dates',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='date_str', full_name='spectral_meterusage.Date.date_str', index=0,
+      name='date_start', full_name='spectral_meterusage.Dates.date_start', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='date_end', full_name='spectral_meterusage.Dates.date_end', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -53,7 +60,7 @@ _DATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=41,
-  serialized_end=65,
+  serialized_end=86,
 )
 
 
@@ -83,20 +90,20 @@ _DATEVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=67,
-  serialized_end=94,
+  serialized_start=88,
+  serialized_end=115,
 )
 
-DESCRIPTOR.message_types_by_name['Date'] = _DATE
+DESCRIPTOR.message_types_by_name['Dates'] = _DATES
 DESCRIPTOR.message_types_by_name['dateValue'] = _DATEVALUE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), {
-  'DESCRIPTOR' : _DATE,
+Dates = _reflection.GeneratedProtocolMessageType('Dates', (_message.Message,), {
+  'DESCRIPTOR' : _DATES,
   '__module__' : 'meterValue_pb2'
-  # @@protoc_insertion_point(class_scope:spectral_meterusage.Date)
+  # @@protoc_insertion_point(class_scope:spectral_meterusage.Dates)
   })
-_sym_db.RegisterMessage(Date)
+_sym_db.RegisterMessage(Dates)
 
 dateValue = _reflection.GeneratedProtocolMessageType('dateValue', (_message.Message,), {
   'DESCRIPTOR' : _DATEVALUE,
@@ -113,15 +120,15 @@ _METERUSAGEVALUES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=96,
-  serialized_end=191,
+  serialized_start=117,
+  serialized_end=213,
   methods=[
   _descriptor.MethodDescriptor(
     name='getMeterData',
     full_name='spectral_meterusage.meterUsageValues.getMeterData',
     index=0,
     containing_service=None,
-    input_type=_DATE,
+    input_type=_DATES,
     output_type=_DATEVALUE,
     serialized_options=None,
   ),
