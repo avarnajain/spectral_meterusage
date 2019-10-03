@@ -20,9 +20,11 @@ class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
     def getMeterData(self, request, context):
         response = meterValue_pb2.Date()
         # response.date_str = functions.get_data(request.date_str)
-        print('request date string', request.date_str)
-        # response.date_str = functions.get_data(request.date_str)
-        # return response
+        # print('request date string', request.date_str)
+        response.date_str = functions.get_data(request.date_str)
+        # print('response', response)
+        # print(response.date_str)
+        return response
 
 
 # create a gRPC server
