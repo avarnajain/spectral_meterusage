@@ -27,8 +27,7 @@ def homepage():
 def get_data_from_grpc():
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
-    # print(type(start_date))
-    print(get_data(start_date, end_date))
+    # print(get_data(start_date, end_date))
     return "Hi"
 
 
