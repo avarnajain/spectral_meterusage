@@ -18,12 +18,13 @@ class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
     # the request and response are of the data type
     # meterValue_pb2.Date
     def getMeterData(self, request, context):
-        response = meterValue_pb2.Date()
+        # print('in get meter data on server')
+        response = meterValue_pb2.dateValue()
         # response.date_str = functions.get_data(request.date_str)
         # print('request date string', request.date_str)
-        response.date_str = functions.get_data(request.date_str)
+        response.values = functions.get_data(request.date_str)
         # print('response', response)
-        # print(response.date_str)
+        # print(response.values)
         return response
 
 

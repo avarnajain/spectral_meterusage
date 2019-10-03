@@ -15,7 +15,7 @@ class meterUsageValuesStub(object):
       channel: A grpc.Channel.
     """
     self.getMeterData = channel.unary_unary(
-        '/meterUsageValues/getMeterData',
+        '/spectral_meterusage.meterUsageValues/getMeterData',
         request_serializer=meterValue__pb2.Date.SerializeToString,
         response_deserializer=meterValue__pb2.dateValue.FromString,
         )
@@ -42,5 +42,5 @@ def add_meterUsageValuesServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'meterUsageValues', rpc_method_handlers)
+      'spectral_meterusage.meterUsageValues', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

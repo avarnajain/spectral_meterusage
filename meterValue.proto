@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+package spectral_meterusage;
 
 // Request for meter usage values
 message Date {
@@ -8,7 +9,7 @@ message Date {
 
 // Response for meter usage values
 message dateValue {
-    map<string, float> values = 1;
+    string values = 1;
 }
 
 // Service Definition
