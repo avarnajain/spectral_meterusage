@@ -14,6 +14,7 @@ source env/bin/activate
 ```
 Clone this github repository and download the required libraries
 ```bash
+git clone https://github.com/avarnajain/spectral_meterusage.git
 pip3 install -r requirements.txt
 ```
 
