@@ -47,7 +47,7 @@ Using the gRPC server was the most time consuming part of this prompt for me. Af
 
 Flask Server + HTML
 
-I set up a flask server with a form on the homepage with start and end date as the input values. Since the data given to me was for one month only, I thought it might be more interesting to see patterns in meter usage over the course of a day, which I showcase in the output line graph. This can easily be changed based on the use case for the app.
+I set up a flask server with a form on the homepage with start and end date as the input values. Since the data given to me was for one month only, I thought it might be more interesting to see patterns in meter usage over the course of a day, which I showcase in the output line graph. This can easily be changed based on the use case for the app. I did not spend much time on the front-end portion of the app in relation to the formatting of the HTML file.
 
 Plotting
 
