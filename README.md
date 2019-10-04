@@ -63,16 +63,6 @@ To test my flask app, I decided to use the python unittest module. To run the te
 3. To check that a 404 error is returned when the form is submitted with dates for which we have no data
 4. To check that a 404 error is returned when the form is submitted with invalid dates
 
-```bash
-python3 tests.py
-```
-
-I also used the python coverage module to check my test coverage.
-
-```bash
-coverage report -m
-```
-
-The app is currently at 98% total coverage
+I also used the python coverage module to check my test coverage. The app is currently at 98% total coverage.
 
 ![test coverage](test_coverage.png)
