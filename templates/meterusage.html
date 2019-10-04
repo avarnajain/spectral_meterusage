@@ -6,7 +6,7 @@
 
     </head>
     <body>
-        <form id='dates' action="/get-data">
+        <form id='dates' action="/get-data" method="post">
             <h1>Get Meter Usage Values </h1><br>
             <h2>Select a start and end date between January 1st 2019 and January 31st 2019 </h2><br>
             Start:
@@ -15,6 +15,9 @@
             <input type="date" name="end_date"><br>
             <input type="submit">
         </form>
+        {% if img_url %}
+            <h1>Output Graph</h1>
+        {% endif %}
         <img src={{img_url}}>
     </body>
 </html>

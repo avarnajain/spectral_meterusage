@@ -18,12 +18,12 @@ def homepage():
     session['image_created'] = False
     return render_template('meterusage.html', img_url=img_url)
 
-@app.route('/get-data')
+@app.route('/get-data', methods=['POST'])
 def get_data_from_grpc():
-    start_date = request.args.get('start_date')
-    end_date = request.args.get('end_date')
+    start_date = request.form.get('start_date')
+    end_date = request.form.get('end_date')
     response = gRPC_client.create_gRPC_request(start_date, end_date)
-    print('response', response)
+    # print('response', response)
     if not response:
         return jsonify({}), 404
     else:

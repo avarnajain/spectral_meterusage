@@ -11,10 +11,23 @@ class TestAPI(unittest.TestCase):
         self.client = app.test_client()
         app.config['TESTING'] = True
 
-    def test_users(self):
+    def test_homepage(self):
         response = self.client.get('/')
         data = response.data
-        self.assertIn(b'start', data) 
+        self.assertIn(b'start', data)
+
+    def test_form_submission(self):
+        response = self.client.post("/get-data",
+                                  data={"start_date": "2019-01-01", "end_date": "2019-01-02"},
+                                  follow_redirects=True)
+        data = response.data
+        self.assertIn(b'my_plot.png', data)
+
+    def test_incorrect_date_submission(self):
+        response = self.client.post("/get-data",
+                                data={"start_date": "2019-02-02", "end_date": "2019-03-02"},
+                                follow_redirects=True)
+        self.assertTrue(response.status_code == 404)
 
 if __name__ == "__main__":
     unittest.main()
