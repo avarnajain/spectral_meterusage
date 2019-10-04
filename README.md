@@ -33,8 +33,6 @@ Go to your browser and enter the address for your flask app, set to ```localhost
 
 Fill out the form for the dates you want, press submit, and voila!
 
-### Example Graph
-
 An example of the graph returned is as follows:
 
 ![meter usage graph](example_plot.png)
