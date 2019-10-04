@@ -9,11 +9,12 @@ message Dates {
 }
 
 // Response for meter usage values
-message dateValue {
+// dictionary formatted as string
+message dateValues {
     string values = 1;
 }
 
 // Service Definition
 service meterUsageValues {
-    rpc getMeterData (Dates) returns (dateValue) {}
+    rpc getMeterData (Dates) returns (dateValues) {}
 }
