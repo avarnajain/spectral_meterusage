@@ -9,16 +9,11 @@ message Dates {
 }
 
 // Response for meter usage values
-//message dateValue {
-//    string values = 1;
-//}
-
 message dateValue {
-    string key = 1;
-    float value = 2;
+    string values = 1;
 }
 
 // Service Definition
 service meterUsageValues {
-    rpc getMeterData (Dates) returns (stream dateValue) {}
+    rpc getMeterData (Dates) returns (dateValue) {}
 }

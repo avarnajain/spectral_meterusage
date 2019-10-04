@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='spectral_meterusage',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10meterValue.proto\x12\x13spectral_meterusage\"-\n\x05\x44\x61tes\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61te_end\x18\x02 \x01(\t\"\'\n\tdateValue\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02\x32\x62\n\x10meterUsageValues\x12N\n\x0cgetMeterData\x12\x1a.spectral_meterusage.Dates\x1a\x1e.spectral_meterusage.dateValue\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10meterValue.proto\x12\x13spectral_meterusage\"-\n\x05\x44\x61tes\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61te_end\x18\x02 \x01(\t\"\x1b\n\tdateValue\x12\x0e\n\x06values\x18\x01 \x01(\t2`\n\x10meterUsageValues\x12L\n\x0cgetMeterData\x12\x1a.spectral_meterusage.Dates\x1a\x1e.spectral_meterusage.dateValue\"\x00\x62\x06proto3')
 )
 
 
@@ -72,16 +72,9 @@ _DATEVALUE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='spectral_meterusage.dateValue.key', index=0,
+      name='values', full_name='spectral_meterusage.dateValue.values', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='spectral_meterusage.dateValue.value', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -98,7 +91,7 @@ _DATEVALUE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=88,
-  serialized_end=127,
+  serialized_end=115,
 )
 
 DESCRIPTOR.message_types_by_name['Dates'] = _DATES
@@ -127,8 +120,8 @@ _METERUSAGEVALUES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=129,
-  serialized_end=227,
+  serialized_start=117,
+  serialized_end=213,
   methods=[
   _descriptor.MethodDescriptor(
     name='getMeterData',

@@ -14,7 +14,7 @@ class meterUsageValuesStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.getMeterData = channel.unary_stream(
+    self.getMeterData = channel.unary_unary(
         '/spectral_meterusage.meterUsageValues/getMeterData',
         request_serializer=meterValue__pb2.Dates.SerializeToString,
         response_deserializer=meterValue__pb2.dateValue.FromString,
@@ -35,7 +35,7 @@ class meterUsageValuesServicer(object):
 
 def add_meterUsageValuesServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'getMeterData': grpc.unary_stream_rpc_method_handler(
+      'getMeterData': grpc.unary_unary_rpc_method_handler(
           servicer.getMeterData,
           request_deserializer=meterValue__pb2.Dates.FromString,
           response_serializer=meterValue__pb2.dateValue.SerializeToString,
