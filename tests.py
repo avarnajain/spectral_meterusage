@@ -29,5 +29,11 @@ class TestAPI(unittest.TestCase):
                                 follow_redirects=True)
         self.assertTrue(response.status_code == 404)
 
+    def test_invalid_input(self):
+        response = self.client.post("/get-data",
+                                data={"start_date": "YY/MM/DD", "end_date": "YY/MM/DD"},
+                                follow_redirects=True)
+        self.assertTrue(response.status_code == 404)
+
 if __name__ == "__main__":
     unittest.main()

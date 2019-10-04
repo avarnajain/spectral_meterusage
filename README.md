@@ -41,9 +41,9 @@ Fill out the form for the dates you want, press submit, and voila!
 
 An example of the graph returned is as follows:
 
-![meter usage graph](my_plot.png)
+![meter usage graph](example_plot.png)
 
-If you fill out the form with a date range for which we have no data, the flask server will redirect back to the homepage and give a a 404 error. If part of the date range specified is in the database, the graph will show the data for those specific days only
+If you fill out the form with a date range for which we have no data or with invalid dates, the flask server will redirect back to the homepage and give a 404 error. If part of the date range specified is in the database, the graph will show the data for those specific days only
 
 ## Testing
 I used the python unittest module to test my Flask routes. The following command on your terminal will run the tests in python (make sure your gRPC server is running in the background)
@@ -57,9 +57,9 @@ I also used the python coverage module to check the coverage of my tests on the 
 coverage report -m
 ```
 
-The app is currently at 98% total coverage
+The app is currently at 96% total coverage
 
 ![test coverage](test_coverage.png)
 
 ## Resources and Blockers
-I used the following [link](https://www.semantics3.com/blog/a-simplified-guide-to-grpc-in-python-6c4e25f0c506/) to set up my basic gRPC server, and modified the functions as needed from there. My main blocker here was formatting my gRPC response to a dictionary or list. I had to settle with returning a string of the meter usage values by date and time, which I then convert back into a dictionary of datetime objects on my flask server.
+I used the following [link](https://www.semantics3.com/blog/a-simplified-guide-to-grpc-in-python-6c4e25f0c506/) to set up my basic gRPC server, and modified the functions as needed from there. My main blocker here was formatting my gRPC response to be a dictionary or a list. I had to settle with returning a string of the meter usage values by date and time, which I then convert back into a dictionary of datetime objects on my flask server to use to create the line graph.

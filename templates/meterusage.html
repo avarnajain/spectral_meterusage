@@ -2,13 +2,21 @@
 <html>
     <head>
         <title>Meter Usage</title>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
     </head>
     <body>
+        <h1>Meter Usage Values</h1>
+        <p>Select a start and end date between January 1st 2019 and January 31st 2019 </p><br>
         <form id='dates' action="/get-data" method="post">
-            <h1>Get Meter Usage Values </h1><br>
-            <h2>Select a start and end date between January 1st 2019 and January 31st 2019 </h2><br>
             Start:
             <input type="date" name="start_date"><br>
             End:
@@ -16,8 +24,8 @@
             <input type="submit">
         </form>
         {% if img_url %}
-            <h1>Output Graph</h1>
+            <h1>Meter Usage Data</h1>
+            <img src="../static/{{img_url}}" alt="Line Plot"/>
         {% endif %}
-        <img src={{img_url}}>
     </body>
 </html>
