@@ -1,3 +1,8 @@
 env/
 *.pyc
+
+# exclude everything inside static
 static/*
+
+# exception to the rule
+!static/.gitkeep 
