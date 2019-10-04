@@ -17,4 +17,4 @@ request = meterValue_pb2.Dates(date_start='2019-01-02', date_end='2019-01-03')
 # make the call
 response = stub.getMeterData(request)
 # et voilà
-print(response.values)
+print(response)

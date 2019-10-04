@@ -12,20 +12,15 @@ import functions
 # create a class to define the server functions, derived from
 # meterValue_pb2_grpc.meterUsageValuesServicer
 class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
-    # def __init__(self, meterUsageValues):
-    #     self._meterUsageValues = meterUsageValues
     # functions.get_data is exposed here
-    # the request and response are of the data type
-    # meterValue_pb2.Date
     def getMeterData(self, request, context):
         # print('in get meter data on server')
         response = meterValue_pb2.dateValue()
         # response.date_str = functions.get_data(request.date_str)
         # print('request date string', request.date_str)
-        response.values = functions.get_data(request.date_start, request.date_end)
-        # print('response', response)
-        # print(response.values)
-        return response
+        response_dict = functions.get_data(request.date_start, request.date_end)
+        print(response_dict)
+        # return response
 
 
 # create a gRPC server
