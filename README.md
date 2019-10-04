@@ -21,6 +21,7 @@ To use the app, you have to start two servers on two different bash terminals, r
 python3 gRPC_server.py
 ```
 
+
 2. ```bash
 python3 flask_server.py
 ```
