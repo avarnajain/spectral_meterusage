@@ -17,8 +17,11 @@ pip3 install -r requirements.txt
 
 To use the app, you have to start two servers on two different bash terminals, remember to activate the virtual environment on both.
 
-```bash
+1. ```bash
 python3 gRPC_server.py
+```
+
+2. ```bash
 python3 flask_server.py
 ```
 
