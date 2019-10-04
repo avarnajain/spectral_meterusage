@@ -1,37 +1,33 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect, session
 import requests
-from functions import *
-
+import flask_functions
 import gRPC_client
 
 app = Flask(__name__)
-
-DATES_DICT = {
-    'January':[n for n in range(1, 32)],
-    'February': [n for n in range(1, 29)],
-    'March': [n for n in range(1, 32)],
-    'April': [n for n in range(1, 31)],
-    'May': [n for n in range(1, 32)],
-    'June': [n for n in range(1, 31)],
-    'July': [n for n in range(1, 32)],
-    'August': [n for n in range(1, 32)],
-    'September': [n for n in range(1, 31)],
-    'October': [n for n in range(1, 32)],
-    'November': [n for n in range(1, 31)],
-    'December': [n for n in range(1, 32)]
-}
+app.secret_key = "SECRET"
 
 @app.route('/')
 def homepage():
-    return render_template('meterusage.html', dates=DATES_DICT)
+    try:
+        if session['image_created']:
+            img_url = "http://my_plot.png"
+        else:
+            img_url = ''
+    except KeyError:
+        img_url = ''
+    session['image_created'] = False
+    return render_template('meterusage.html', img_url=img_url)
 
 @app.route('/get-data')
 def get_data_from_grpc():
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
     response = gRPC_client.create_gRPC_request(start_date, end_date)
-    return jsonify(response)
+    flask_functions.make_plot(response)
+    session['image_created'] = True
+    return redirect('/')
 
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
+    

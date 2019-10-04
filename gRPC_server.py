@@ -6,10 +6,10 @@ import time
 import meterValue_pb2
 import meterValue_pb2_grpc
 
-# import the original functions.py
-import functions
+# import the original grpc_functions.py
+import grpc_functions
 
-# create a class to define the server functions, derived from
+# create a class to define the server grpc_functions, derived from
 # meterValue_pb2_grpc.meterUsageValuesServicer
 class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
 
@@ -17,8 +17,8 @@ class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
         print('Request Made to gRPC server')
         # initialize response object
         response = meterValue_pb2.dateValues()
-        # store functions.get_data return as values
-        response.values = functions.get_data(request.date_start, request.date_end)
+        # store grpc_functions.get_data return as values
+        response.values = grpc_functions.get_data(request.date_start, request.date_end)
         # return response
         return response
 

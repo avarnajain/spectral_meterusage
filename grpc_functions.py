@@ -20,11 +20,15 @@ def get_data(date_start, date_end):
         next(meterusage_reader)
         # loop through all rows
         for row in meterusage_reader:
-            datetime_obj = datetime.strptime(row[0], '%Y-%m-%d %H:%M:%S')
+            datetime_obj = datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S")
             # if datetime falls within range
             if datetime_obj >= start and datetime_obj <= end:
-                time = datetime_obj.strftime("%Y-%m-%d %H:%M:%S")
+                date = datetime_obj.date().strftime("%Y-%m-%d")
+                time = datetime_obj.time().strftime("%H:%M:%S")
                 # add to dictionary
-                usage_dict[time] = row[1]
+                if date in usage_dict:
+                    usage_dict[date].append({'time': time, 'value': row[1]})
+                else:
+                    usage_dict[date] = [{'time': time, 'value': row[1]}]
     # return dictionary formatted as a string
     return str(usage_dict)
