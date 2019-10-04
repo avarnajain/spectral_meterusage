@@ -31,4 +31,6 @@ def get_data(date_start, date_end):
                 else:
                     usage_dict[date] = [{'time': time, 'value': row[1]}]
     # return dictionary formatted as a string
+    if not usage_dict:
+        return str("")
     return str(usage_dict)

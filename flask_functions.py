@@ -48,7 +48,7 @@ def create_df(response_str):
 def make_plot(response_str):
     df = create_df(response_str)
     fig, ax = plt.subplots()
-    df.plot(x='time', ax=ax, legend=True)
+    df.plot(x='time', ax=ax, legend=False)
     ax.set_title("Meter Usage Over Time")
     ax.xaxis.set_ticks(['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'])
     ax.xaxis.set_label_text("Hour of the Day")
