@@ -1,6 +1,6 @@
 # Spectral Meter Usage App
 
-This repository contains the setup and usage instructions for the gRPC and Flask based app to get meter usage data
+This repository contains the setup and usage instructions for the gRPC and Flask based app to get meter usage data, as well as a description about my process, blockers and the resources I used to create it.
 
 ## Setup
 
@@ -45,22 +45,6 @@ An example of the graph returned is as follows:
 
 If you fill out the form with a date range for which we have no data or with invalid dates, the flask server will redirect back to the homepage and give a 404 error. If part of the date range specified is in the database, the graph will show the data for those specific days only
 
-## Testing
-I used the python unittest module to test my Flask routes. The following command on your terminal will run the tests in python (make sure your gRPC server is running in the background)
-
-```bash
-python3 tests.py
-```
-I also used the python coverage module to check the coverage of my tests on the flask app. Run the following command on your bash terminal to see the coverage 
-
-```bash
-coverage report -m
-```
-
-The app is currently at 98% total coverage
-
-![test coverage](test_coverage.png)
-
 ## Resources and Blockers
 
 gRPC Server + csv
@@ -85,6 +69,16 @@ To test my flask app, I decided to use the python unittest module. To run the te
 3. To check that a 404 error is returned when the form is submitted with dates for which we have no data
 4. To check that a 404 error is returned when the form is submitted with invalid dates
 
+```bash
+python3 tests.py
+```
+
 I also used the python coverage module to check my test coverage.
 
+```bash
+coverage report -m
+```
 
+The app is currently at 98% total coverage
+
+![test coverage](test_coverage.png)
