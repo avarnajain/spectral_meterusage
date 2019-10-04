@@ -57,8 +57,6 @@ def make_plot(response_str):
     ax.xaxis.set_label_text("Hour of the Day")
     ax.yaxis.set_label_text("Meter Usage")
     # save plot
-    fig.savefig('static/my_plot.png')
-    return fig
-
-# print(make_plot(response_str))
-
+    image_path = "{}.png".format(datetime.now().time())
+    fig.savefig('static/{}'.format(image_path))
+    return image_path

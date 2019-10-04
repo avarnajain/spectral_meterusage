@@ -57,7 +57,7 @@ I also used the python coverage module to check the coverage of my tests on the 
 coverage report -m
 ```
 
-The app is currently at 96% total coverage
+The app is currently at 98% total coverage
 
 ![test coverage](test_coverage.png)
 
