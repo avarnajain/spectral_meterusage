@@ -1,0 +1,14 @@
+
+# To check test coverage, run the following commands
+# coverage run tests.py
+# coverage report -m
+
+# the omit function removes files you dont want covered,
+# you must give it the entire file path for it to work!
+
+
+[run]
+omit = 
+    /home/vagrant/src/spectral_gRPC/env/*
+    /home/vagrant/src/spectral_gRPC/meterValue_pb2.py
+    /home/vagrant/src/spectral_gRPC/meterValue_pb2_grpc.py
