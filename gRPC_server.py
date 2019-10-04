@@ -14,6 +14,7 @@ import functions
 class meterUsageValuesServicer(meterValue_pb2_grpc.meterUsageValuesServicer):
 
     def getMeterData(self, request, context):
+        print('Request Made to gRPC server')
         # initialize response object
         response = meterValue_pb2.dateValues()
         # store functions.get_data return as values

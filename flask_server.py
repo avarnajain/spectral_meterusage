@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request, render_template
 import requests
 from functions import *
 
+import gRPC_client
+
 app = Flask(__name__)
 
 DATES_DICT = {
@@ -27,8 +29,8 @@ def homepage():
 def get_data_from_grpc():
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
-    # print(get_data(start_date, end_date))
-    return "Hi"
+    response = gRPC_client.create_gRPC_request(start_date, end_date)
+    return jsonify(response)
 
 
 if __name__ == "__main__":
