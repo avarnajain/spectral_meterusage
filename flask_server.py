@@ -23,9 +23,8 @@ def get_data_from_grpc():
     start_date = request.form.get('start_date')
     end_date = request.form.get('end_date')
     response = gRPC_client.create_gRPC_request(start_date, end_date)
-    # print('response', response)
     if not response:
-        return jsonify({}), 404
+        return redirect('/'), 404
     else:
         flask_functions.make_plot(response)
         session['image_created'] = True

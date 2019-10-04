@@ -1,10 +1,10 @@
 # Spectral Meter Usage
 
-This repository contains the setup and creation instructions for the gRPC and Flask server based app to get meter usage data
+This repository contains the setup and usage instructions for the gRPC and Flask server based app to get meter usage data
 
 ## Setup
 
-Create a new directory on your computer and set up anf actiavte a python3 virtual environment. 
+Create a new directory on your computer, then set up and actiavte a python3 virtual environment
 
 ```bash
 virtualenv env
@@ -43,7 +43,7 @@ An example of the graph returned is as follows:
 
 ![meter usage graph](my_plot.png)
 
-If you fill out the form with a date range for which we have no data, the flask server will return an empty dictionary as well as a 404 error. If part of the date range specified is in the database, the graph will show the data for those specific days
+If you fill out the form with a date range for which we have no data, the flask server will redirect back to the homepage and give a a 404 error. If part of the date range specified is in the database, the graph will show the data for those specific days only
 
 ## Testing
 I used the python unittest module to test my Flask routes. The following command on your terminal will run the tests in python (make sure your gRPC server is running in the background)
