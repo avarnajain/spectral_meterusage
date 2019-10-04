@@ -1,6 +1,6 @@
-# Spectral Meter Usage
+# Spectral Meter Usage App
 
-This repository contains the setup and usage instructions for the gRPC and Flask server based app to get meter usage data
+This repository contains the setup and usage instructions for the gRPC and Flask based app to get meter usage data
 
 ## Setup
 
@@ -58,6 +58,7 @@ coverage report -m
 ```
 
 The app is currently at 98% total coverage
+
 ![test coverage](test_coverage.png)
 
 ## Resources and Blockers
