@@ -1,8 +1,10 @@
 import csv
 from datetime import datetime, timedelta
 
-# get meter usage data for between the start and end date
 def get_data(date_start, date_end):
+    """
+    Get meter usage data for between the start and end date
+    """
     # csv filename
     filename = "meterusage.csv"
     # user specified start date
