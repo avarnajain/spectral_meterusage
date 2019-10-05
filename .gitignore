@@ -1,5 +1,6 @@
 env/
 *.pyc
+.coverage
 
 # exclude everything inside static
 static/*
