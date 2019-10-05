@@ -46,11 +46,9 @@ I set up a flask server with a form on the homepage with start and end date as t
 
 Plotting
 
-I have some previous experience using ggplot on R, but none using pandas or matplotlib, so I took some time to read through the types of ways to join dataframes in order to create the line plot. I settled with using the merge function, which I was only able to implement using a for loop (merging two data frames at a time), instead of a list of dataframes. Once the final df is created, I plot the figure and add some detail on the axes and title. 
+I have some previous experience using ggplot on R, but none using pandas or matplotlib, so I took some time to read through the types of ways to join dataframes in order to create the line plot. I settled with using the merge function, which I was only able to implement using a for loop (merging two data frames at a time), instead of a list of dataframes. Once the final df was created, I plotted the figure and added some detail on the axes and title. Everytime a plot is created, it is stored in the static folder with a name based on the time the plot was created, making each plot unique to prevent caching on the browser. 
 
-Everytime a plot is created, it is stored in the static folder with a name based on the time the plot was created, making each plot unique to prevent caching on the browser. 
-
-I decided to create the line graph in a manner that would overlay multiple days of data over a fixed time axis instead of making a single line go over multiple days. I did this to be able to better see the daily differences in meter usage over time.
+I decided to create the line graph in a manner that would overlay multiple days of data over a fixed time axis instead of making a single line go over multiple days. I did this to better visualize the daily differences in meter usage.
 
 Testing
 
