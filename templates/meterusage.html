@@ -18,14 +18,13 @@
         <p>Select a start and end date between January 1st 2019 and January 31st 2019 </p><br>
         <form id='dates' action="/get-data" method="post">
             Start:
-            <input type="date" name="start_date"><br>
+            <input id="start_date_id" type="date" name="start_date"><br>
             End:
-            <input type="date" name="end_date"><br>
+            <input id="end_date_id" type="date" name="end_date"><br>
             <input type="submit">
         </form>
-        {% if img_url %}
-            <h1>Meter Usage Data</h1>
-            <img src="../static/{{img_url}}" alt="Line Plot"/>
-        {% endif %}
+        <div id="graph"></div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/static/form.js"></script>
     </body>
 </html>

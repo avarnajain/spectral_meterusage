@@ -5,4 +5,4 @@ env/
 static/*
 
 # exception to the rule
-!static/.gitkeep 
+!static/form.js
